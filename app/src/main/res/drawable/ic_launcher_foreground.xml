@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!--
+        Design: white document card with a folded top-right corner.
+        Inside: gradient "P" letterform (same 4-stop palette as the background)
+        so the icon tells the story — it's a PDF editor.
+
+        Safe zone: roughly (21,21)→(87,87). Key mark well within it.
+    -->
+
+    <!-- Soft drop shadow behind card -->
+    <path
+        android:pathData="M 21,16 L 68,16 L 88,36 L 88,99 L 21,99 Z"
+        android:fillColor="#30000000"/>
+
+    <!-- White document card (folded top-right corner) -->
+    <path
+        android:pathData="M 18,13 L 65,13 L 85,33 L 85,96 L 18,96 Z"
+        android:fillColor="#FFFFFFFF"/>
+
+    <!--
+        Fold crease — a filled triangle that sits over the corner
+        of the white card, slightly darker to suggest depth.
+    -->
+    <path
+        android:pathData="M 65,13 L 85,33 L 65,33 Z"
+        android:fillColor="#1A000000"/>
+
+    <!-- Fold edge lines (crease shadow + highlight) -->
+    <path
+        android:pathData="M 65,13 L 65,33 L 85,33"
+        android:fillColor="#00000000"
+        android:strokeColor="#28000000"
+        android:strokeWidth="0.9"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+
+    <!--
+        Gradient "P" with a hollow bowl (evenOdd fill).
+        Outer path  = full P silhouette.
+        Inner path  = punch-out in the bowl centre → reveals white card bg.
+        Gradient matches the background: green→yellow→blue→red.
+    -->
+    <path
+        android:fillType="evenOdd"
+        android:pathData="
+            M 28,38
+            L 43,38
+            Q 80,38 80,53
+            Q 80,68 43,68
+            L 43,85
+            L 28,85
+            Z
+
+            M 43,49
+            Q 66,49 66,53
+            Q 66,57 43,57
+            Z
+        ">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="28"
+                android:startY="38"
+                android:endX="80"
+                android:endY="85">
+                <item android:offset="0"    android:color="#FF68C040"/>
+                <item android:offset="0.33" android:color="#FFDDAC20"/>
+                <item android:offset="0.67" android:color="#FF3A58C8"/>
+                <item android:offset="1"    android:color="#FFD04444"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Three subtle content lines (suggest text in a document) -->
+    <path
+        android:pathData="M 43,73 L 78,73"
+        android:fillColor="#00000000"
+        android:strokeColor="#22000000"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M 43,79 L 70,79"
+        android:fillColor="#00000000"
+        android:strokeColor="#1A000000"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"/>
+
+</vector>
